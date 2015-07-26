@@ -1,0 +1,1 @@
+RENAME TABLE `block_manip` TO `blocks`;
