@@ -5,7 +5,7 @@ template::setJs('/js/jquery.tr.js');
 class blocks {
     
     public static function loadAssets ($options) {
-        if (config::getModuleIni('blocks_markedit')) {
+        if (conf::getModuleIni('blocks_markedit')) {
             moduleloader::includeTemplateCommon('jquery-markedit');
             jquery_markedit_load_assets($options);
         }
@@ -16,7 +16,7 @@ class blocks {
      * @return array $blocks all blocks set in main config 
      */
     public static function getBlocks () {
-        $blocks = config::getMainIni('blocks_all');
+        $blocks = conf::getMainIni('blocks_all');
         $blocks = explode(',' , $blocks);
         return $blocks;
     }
@@ -26,7 +26,7 @@ class blocks {
      * @return array $blocks all valid blocks that can be moved 
      */
     public static function getManipBlocks () {
-        $blocks = config::getModuleIni('blocks_blocks');
+        $blocks = conf::getModuleIni('blocks_blocks');
         $blocks = explode(',' , $blocks);
         return $blocks;
     }
@@ -43,7 +43,7 @@ class blocks {
         $unused = array ();
         foreach ($blocks as $val) {
             if (in_array($val, $valid_blocks)) {
-                $values = config::getMainIni($val);
+                $values = conf::getMainIni($val);
                 if (empty($values)) {
                     $values = array ();
                 }
@@ -52,7 +52,7 @@ class blocks {
                 // so we can keep on adding entries to file, which user
                 // can add. 
                 
-                $from_file = config::getMainIniFromFile($val);
+                $from_file = conf::getMainIniFromFile($val);
                 if (!$from_file) {
                     $from_file = array ();
                 }
@@ -65,7 +65,7 @@ class blocks {
         
         //print_r($unused);
         
-        $values = config::getMainIni('blocks_unused');
+        $values = conf::getMainIni('blocks_unused');
         if (!$values) $values = array ();
         
         $values = array_merge($values, $unused);
@@ -199,7 +199,7 @@ class blocks {
         html::text('title');
 
         $label = lang::system('system_form_label_content'). '<br />';
-        $label.= moduleloader::getFiltersHelp(config::getModuleIni('blocks_filters'));
+        $label.= moduleloader::getFiltersHelp(conf::getModuleIni('blocks_filters'));
 
         html::label('content_block', $label);
         html::textarea('content_block', null, array('class' => 'markdown'));
@@ -256,7 +256,7 @@ class blocks {
         }
         
         $insert_id = db::$dbh->lastInsertId();
-        $unused = config::getMainIni('blocks_unused');
+        $unused = conf::getMainIni('blocks_unused');
         
         if (!is_array($unused)) $unused = array();      
         array_push($unused, $insert_id);
@@ -288,7 +288,7 @@ class blocks {
             //$data = array();
             $blocks = blocks::getManipBlocks();
             foreach ($blocks as $val) {
-                $data = config::getMainIni($val);
+                $data = conf::getMainIni($val);
 
                 foreach ($data as $in_key => $in_val) {
                     if ($in_val == $id) {
@@ -321,7 +321,7 @@ class blocks {
         $db->update('blocks', $values, $id);
         
         //$insert_id = db::$dbh->lastInsertId();
-        $unused = config::getMainIni('blocks_unused');
+        $unused = conf::getMainIni('blocks_unused');
         
         if (!is_array($unused)) $unused = array();      
         if (!in_array ($id, $unused)) { 
@@ -407,7 +407,7 @@ class blocks {
      */
     public static function includeSubModules ($id) {
         
-        $modules = config::getModuleIni('blocks_modules');
+        $modules = conf::getModuleIni('blocks_modules');
         moduleloader::includeModules($modules);
 
         $return_url = self::getReturnUrlFromId($id);

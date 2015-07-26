@@ -5,8 +5,8 @@ if (!session::checkAccessControl('blocks_allow')){
 }
 layout::$blocksContent;
 moduleloader::includeModule ('blocks');
-$blocks_js = config::getModulePath('blocks') . "/assets/sort.js";
-template::setInlineCss(config::getModulePath('blocks') . "/assets/sort.css");;
+$blocks_js = conf::getModulePath('blocks') . "/assets/sort.js";
+template::setInlineCss(conf::getModulePath('blocks') . "/assets/sort.css");;
 
 $search = array ();
 $search[] = '{blocks_js_ids}';
