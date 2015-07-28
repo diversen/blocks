@@ -1,6 +1,6 @@
 <?php
 
-template::setJs('/js/jquery.tr.js');
+//template::setJs('/js/jquery.tr.js');
 
 class blocks {
     
