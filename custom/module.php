@@ -1,11 +1,11 @@
 <?php
 
-use diversen\session;
-use diversen\log;
-use diversen\moduleloader;
 use diversen\html;
 use diversen\http;
 use diversen\lang;
+use diversen\log;
+use diversen\moduleloader;
+use diversen\session;
 
 class blocks_custom {
 

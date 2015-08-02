@@ -1,7 +1,6 @@
 <?php
 
 use diversen\lang;
-use diversen\conf;
 
 $_INSTALL['VERSION'] = 3.03;
 $_INSTALL['MAIN_MENU_ITEM'] = array (

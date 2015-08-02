@@ -1,5 +1,8 @@
 <?php
 
+use diversen\conf;
+use diversen\moduleloader;
+
 function block_blocks_info () {
     moduleloader::includeModule('blocks');
     $text = conf::getModuleIni('blocks_manip_info');

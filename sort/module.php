@@ -1,12 +1,12 @@
 <?php
 
-use diversen\session;
 use diversen\conf;
-use diversen\template;
-use diversen\log;
 use diversen\db\q;
 use diversen\layout;
+use diversen\log;
 use diversen\moduleloader;
+use diversen\session;
+use diversen\template;
 
 
 
