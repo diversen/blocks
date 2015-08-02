@@ -1,5 +1,6 @@
 <?php
 
+use diversen\lang;
 $_MODULE_MENU[] = array(
         'title' => lang::translate('blocks_menu_sort'),
         'url' => '/blocks/sort/index',

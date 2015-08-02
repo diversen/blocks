@@ -25,9 +25,6 @@ using the jquerysort modules.
     blocks_blocks = "blocks,blocks_sec,blocks_unused"
     ; who can manipulate blogs
     blocks_allow = "admin"
-    ; use markedit editor
-    blocks_markedit = 1
-    ; block manip sub modules
-    blocks_modules[] = 'image'
+
 
 # blocks

@@ -1,0 +1,83 @@
+<?php
+
+use diversen\session;
+use diversen\conf;
+use diversen\template;
+use diversen\log;
+use diversen\db\q;
+use diversen\layout;
+use diversen\moduleloader;
+
+
+
+
+class blocks_sort {
+
+    public function indexAction() {
+
+        if (!session::checkAccessControl('blocks_allow')) {
+            return;
+        }
+        layout::$blocksContent;
+        moduleloader::includeModule('blocks');
+        $blocks_js = conf::getModulePath('blocks') . "/assets/sort.js";
+        template::setInlineCss(conf::getModulePath('blocks') . "/assets/sort.css");
+        ;
+
+        $search = array();
+        $search[] = '{blocks_js_ids}';
+        $search[] = '{blocks_js_data}';
+
+        $replace = array();
+        $replace[] = blocks::getJsIds();
+        $replace[] = blocks::getJsData();
+
+        //$replace = $code;
+        template::setInlineJs(
+                $blocks_js,
+                // load last or close to. 
+                10000, array('no_cache' => 1,
+            'search' => $search,
+            'replace' => $replace)
+        );
+
+
+        blocks::getBlocksFull();
+        return;
+    }
+
+    public function sortAction() {
+
+        if (!session::checkAccessControl('blocks_allow')) {
+            return;
+        }
+
+        moduleloader::includeModule('configdb');
+        moduleloader::includeModule('blocks');
+
+        $blocks = blocks::getManipBlocks();
+        $data = array();
+
+        try {
+            foreach ($blocks as $key) {
+                $data = array();
+
+                if (!isset($_POST[$key])) {
+                    $data = array();
+                } else {
+                    foreach ($_POST[$key] as $in_val) {
+                        $data[] = str_replace('-', '/', $in_val);
+                    }
+                }
+                configdb::set($key, $data, 'main');
+            }
+        } catch (PDOException $e) {
+            q::rollBack();
+            log::error($e->getTraceAsString());
+            //return false;
+        }
+        q::commit();
+        die;
+    }
+
+}
