@@ -151,7 +151,7 @@ class blocks {
                 $name = $row['title'];
             } else {
                 $val_str = str_replace('/', '-', $val);
-                $name = lang::system($val . "-human");
+                $name = lang::translate($val . "-human");
             }
 
             $str.= "<li id=\"$val_str\">$name</li>";
@@ -185,8 +185,8 @@ class blocks {
 
         if ($action == 'delete') {
             html::formStart('content_article_form');
-            html::legend(lang::translate('blocks_label_delete_block'));
-            html::submit('submit', lang::system('system_submit_delete'));
+            html::legend(lang::translate('Delete block'));
+            html::submit('submit', lang::translate('Delete'));
             html::formEnd();
             echo html::getStr();
             return;
@@ -201,30 +201,30 @@ class blocks {
             blocks::loadAssets($options);
 
             $vars = self::getOne($id);
-            $legend = lang::translate('blocks_label_edit_block');
+            $legend = lang::translate('Edit block');
         } else {
             $options['js'] = array('reference' => 'blocks', 'parent_id' => null);
             blocks::loadAssets($options);
-            $legend = lang::translate('blocks_label_add_block');
+            $legend = lang::translate('Add block');
         }
 
 
         html::init($vars);
         html::formStart('blocks_add');
         html::legend($legend);
-        html::label('title', lang::system('system_form_label_title'));
+        html::label('title', lang::translate('Title'));
         html::text('title');
 
-        $label = lang::system('system_form_label_content') . '<br />';
+        $label = lang::translate('Content') . '<br />';
         $label.= moduleloader::getFiltersHelp(conf::getModuleIni('blocks_filters'));
 
         html::label('content_block', $label);
         html::textarea('content_block', null, array('class' => 'markdown'));
 
-        html::label('show_title', lang::translate('blocks_form_show_title'));
+        html::label('show_title', lang::translate('Display title'));
         html::checkbox('show_title');
 
-        html::submit('submit', lang::system('system_submit'));
+        html::submit('submit', lang::translate('Submit'));
         html::formEnd();
 
         echo html::getStr();
@@ -238,11 +238,11 @@ class blocks {
         }
 
         if (empty($_POST['title'])) {
-            self::$errors['title'] = lang::translate('blocks_form_error_title');
+            self::$errors['title'] = lang::translate('Insert a title');
         }
 
         if (empty($_POST['content_block'])) {
-            self::$errors['content_block'] = lang::translate('blocks_form_error_content');
+            self::$errors['content_block'] = lang::translate('No block content');
         }
 
         if (!isset($_POST['show_title'])) {
@@ -378,9 +378,9 @@ class blocks {
         foreach ($all as $val) {
 
             echo $val['title'] . "<br />\n";
-            echo html::createLink("/blocks/custom/edit/$val[id]", lang::system('system_submit_edit'));
+            echo html::createLink("/blocks/custom/edit/$val[id]", lang::translate('Edit'));
             echo MENU_SUB_SEPARATOR;
-            echo html::createLink("/blocks/custom/delete/$val[id]", lang::system('system_submit_delete'));
+            echo html::createLink("/blocks/custom/delete/$val[id]", lang::translate('Delete'));
             echo "<br />";
         }
     }
@@ -409,7 +409,6 @@ class blocks {
      */
     public static function getLinkFromId($id) {
         $item = self::getOne($id);
-
         $url = self::getReturnUrlFromId($id);
         $title = html::specialEncode($item['title']);
         return html::createLink($url, $title);
