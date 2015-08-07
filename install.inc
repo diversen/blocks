@@ -2,7 +2,7 @@
 
 use diversen\lang;
 
-$_INSTALL['VERSION'] = 3.03;
+$_INSTALL['VERSION'] = 4.01;
 $_INSTALL['MAIN_MENU_ITEM'] = array (
     'title' => lang::translate('Blocks', null, array('no_translate' => true)),
     'url' => '/blocks/sort/index',
