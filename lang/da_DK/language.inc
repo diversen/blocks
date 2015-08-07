@@ -1,6 +1,6 @@
 <?php
 
-$_COS_LANG_MODULE['blocks_sort_success'] = 'Blokkenes orden er blevet gemt';
+$_COS_LANG_MODULE['Blocks has been sorted'] = 'Blokke er blevet sorteret';
 $_COS_LANG_MODULE['Delete block'] = 'Slet blok';
 $_COS_LANG_MODULE['Delete'] = 'Slet';
 $_COS_LANG_MODULE['Edit block'] = 'Edit blok';
@@ -12,5 +12,6 @@ $_COS_LANG_MODULE['Submit'] = 'Indsend';
 $_COS_LANG_MODULE['Insert a title'] = 'Indsæt en titel';
 $_COS_LANG_MODULE['No block content'] = 'Ingen blok indhold';
 $_COS_LANG_MODULE['Edit'] = 'Edit';
-$_COS_LANG_MODULE['blocks_confirm_insert'] = 'Blok er tilføjet';
-$_COS_LANG_MODULE['blocks_confirm_deleted'] = 'Blok blev slettet';
+$_COS_LANG_MODULE['Block has been added'] = 'Blok er blevet tilføjet';
+$_COS_LANG_MODULE['Block has been deleted'] = 'Blok er slettet';
+$_COS_LANG_MODULE['Block has been inserted'] = 'Blok er blevet indsat';

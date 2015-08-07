@@ -1,6 +1,6 @@
 <?php
 
-$_COS_LANG_MODULE['blocks_module_main_title'] = '块';
-$_COS_LANG_MODULE['blocks_menu_sort'] = '分类';
-$_COS_LANG_MODULE['blocks_costum_block_list'] = '自定义模块';
-$_COS_LANG_MODULE['blocks_menu_costum_add'] = '添加块';
+$_COS_LANG_MODULE['Blocks'] = '块';
+$_COS_LANG_MODULE['Sort blocks'] = '排序块';
+$_COS_LANG_MODULE['View blocks'] = '查看块';
+$_COS_LANG_MODULE['Add block'] = 'Add block';

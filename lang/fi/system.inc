@@ -1,6 +1,6 @@
 <?php
 
-$_COS_LANG_MODULE['blocks_module_main_title'] = 'Blocks';
-$_COS_LANG_MODULE['blocks_menu_sort'] = 'Lajitella';
-$_COS_LANG_MODULE['blocks_costum_block_list'] = 'Treasury Blocks';
-$_COS_LANG_MODULE['blocks_menu_costum_add'] = 'Lisätä';
+$_COS_LANG_MODULE['Blocks'] = 'Lohkot';
+$_COS_LANG_MODULE['Sort blocks'] = 'Lajittele lohkot';
+$_COS_LANG_MODULE['View blocks'] = 'Näytä lohkot';
+$_COS_LANG_MODULE['Add block'] = 'Add block';

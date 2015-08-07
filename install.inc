@@ -4,7 +4,7 @@ use diversen\lang;
 
 $_INSTALL['VERSION'] = 3.03;
 $_INSTALL['MAIN_MENU_ITEM'] = array (
-    'title' => lang::translate('blocks_module_main_title', null, array ('no_translate' => true)),
+    'title' => lang::translate('Blocks', null, array('no_translate' => true)),
     'url' => '/blocks/sort/index',
     'module_name' => 'blocks',
     'parent' => 0,

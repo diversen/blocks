@@ -91,7 +91,7 @@ class blocks {
         $str.= self::getOlBlock($values, 'blocks_unused');
         $str.= self::getListEnd();
 
-        $success = lang::translate('blocks_sort_success');
+        $success = lang::translate('Blocks has been sorted');
         $str.= "<div class = \"manip_success\">$success</div>\n";
         echo $str;
     }

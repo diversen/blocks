@@ -3,10 +3,10 @@
 
 // Translation of file /modules/blocks/install.inc
 
-$_COS_LANG_MODULE['blocks_module_main_title'] = 'Blocks';
+$_COS_LANG_MODULE['Blocks'] = 'Blocks';
 
 // Translation of file /modules/blocks/menu.inc
 
-$_COS_LANG_MODULE['blocks_menu_sort'] = 'Sort';
-$_COS_LANG_MODULE['blocks_costum_block_list'] = 'Custom blocks';
-$_COS_LANG_MODULE['blocks_menu_costum_add'] = 'Add block';
+$_COS_LANG_MODULE['Sort blocks'] = 'Sort blocks';
+$_COS_LANG_MODULE['View blocks'] = 'View blocks';
+$_COS_LANG_MODULE['Add block'] = 'Add block';

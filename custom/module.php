@@ -23,7 +23,7 @@ class blocks_custom {
             if (empty(blocks::$errors)) {
                 $res = $block->insert();
                 if ($res) {
-                    http::locationHeader('/blocks/custom/index', lang::translate('blocks_confirm_insert'));
+                    http::locationHeader('/blocks/custom/index', lang::translate('Block has been added'));
                 } else {
                     log::error('Should not happen');
                 }
@@ -48,7 +48,7 @@ class blocks_custom {
                 $id = $block->getId();
                 $res = $block->delete($id);
                 if ($res) {
-                    http::locationHeader('/blocks/custom/index', lang::translate('blocks_confirm_deleted'));
+                    http::locationHeader('/blocks/custom/index', lang::translate('Block has been deleted'));
                 } else {
                     log::error('Should not happen');
                 }
@@ -74,7 +74,7 @@ class blocks_custom {
             if (empty(blocks::$errors)) {
                 $res = $block->update();
                 if ($res) {
-                    http::locationHeader('/blocks/custom/index', lang::translate('blocks_confirm_insert'));
+                    http::locationHeader('/blocks/custom/index', lang::translate('Block has been inserted'));
                 } else {
                     log::error('Should not happen');
                 }

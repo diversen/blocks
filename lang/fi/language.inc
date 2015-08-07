@@ -1,6 +1,6 @@
 <?php
 
-$_COS_LANG_MODULE['blocks_sort_success'] = 'Järjestystä lohkojen on tallennettu';
+$_COS_LANG_MODULE['Blocks has been sorted'] = 'Lohkot on lajiteltu';
 $_COS_LANG_MODULE['Delete block'] = 'Poista lohko';
 $_COS_LANG_MODULE['Delete'] = 'Poistaa';
 $_COS_LANG_MODULE['Edit block'] = 'Muokkaa lohko';
@@ -12,5 +12,6 @@ $_COS_LANG_MODULE['Submit'] = 'Esittää';
 $_COS_LANG_MODULE['Insert a title'] = 'Aseta otsikko';
 $_COS_LANG_MODULE['No block content'] = 'Ei lohko sisältöä';
 $_COS_LANG_MODULE['Edit'] = 'Muokata';
-$_COS_LANG_MODULE['blocks_confirm_insert'] = 'Block lisätään';
-$_COS_LANG_MODULE['blocks_confirm_deleted'] = 'Block on poistettu';
+$_COS_LANG_MODULE['Block has been added'] = 'Block on lisätty';
+$_COS_LANG_MODULE['Block has been deleted'] = 'Lohko on poistettu';
+$_COS_LANG_MODULE['Block has been inserted'] = 'Lohko on asetettu';

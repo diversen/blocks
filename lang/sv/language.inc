@@ -1,6 +1,6 @@
 <?php
 
-$_COS_LANG_MODULE['blocks_sort_success'] = 'Block order har sparats';
+$_COS_LANG_MODULE['Blocks has been sorted'] = 'Blocks har sorterats';
 $_COS_LANG_MODULE['Delete block'] = 'Radera blocket';
 $_COS_LANG_MODULE['Delete'] = 'Radera';
 $_COS_LANG_MODULE['Edit block'] = 'Redigera blocket';
@@ -12,5 +12,6 @@ $_COS_LANG_MODULE['Submit'] = 'Skicka';
 $_COS_LANG_MODULE['Insert a title'] = 'Sätt en titel';
 $_COS_LANG_MODULE['No block content'] = 'Ingen blocket innehåll';
 $_COS_LANG_MODULE['Edit'] = 'Redigera';
-$_COS_LANG_MODULE['blocks_confirm_insert'] = 'Block tillsattes';
-$_COS_LANG_MODULE['blocks_confirm_deleted'] = 'Block utgå';
+$_COS_LANG_MODULE['Block has been added'] = 'Block har lagts';
+$_COS_LANG_MODULE['Block has been deleted'] = 'Blocket har raderats';
+$_COS_LANG_MODULE['Block has been inserted'] = 'Block har satts in';
