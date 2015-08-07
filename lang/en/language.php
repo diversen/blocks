@@ -16,6 +16,11 @@ $LANG['Submit'] = 'Submit';
 $LANG['Insert a title'] = 'Insert a title';
 $LANG['No block content'] = 'No block content';
 $LANG['Edit'] = 'Edit';
+// Translation of file modules/blocks/dummy.php
+
+$LANG['blocks'] = 'Blocks';
+$LANG['blocks_unused'] = 'Unused blocks';
+$LANG['blocks_sec'] = 'Blocks sec';
 // Translation of file modules/blocks/install.inc
 
 $LANG['Blocks'] = 'Blocks';
