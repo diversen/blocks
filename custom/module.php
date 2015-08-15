@@ -1,5 +1,7 @@
 <?php
 
+namespace modules\blocks\custom;
+
 use diversen\html;
 use diversen\http;
 use diversen\lang;
@@ -7,7 +9,9 @@ use diversen\log;
 use diversen\moduleloader;
 use diversen\session;
 
-class blocks_custom {
+use modules\blocks\module as blocks;
+
+class module {
 
     public function addAction() {
         if (!session::checkAccessControl('blocks_allow')) {

@@ -1,5 +1,7 @@
 <?php
 
+namespace modules\blocks\sort;
+
 use diversen\conf;
 use diversen\db\q;
 use diversen\layout;
@@ -8,10 +10,10 @@ use diversen\moduleloader;
 use diversen\session;
 use diversen\template;
 
+use modules\blocks\module as blocks;
+use modules\configdb\module as configdb;
 
-
-
-class blocks_sort {
+class module {
 
     public function indexAction() {
 
@@ -57,7 +59,9 @@ class blocks_sort {
 
         $blocks = blocks::getManipBlocks();
         $data = array();
-
+        
+        // transaction
+        q::begin();
         try {
             foreach ($blocks as $key) {
                 $data = array();
@@ -74,7 +78,7 @@ class blocks_sort {
         } catch (PDOException $e) {
             q::rollBack();
             log::error($e->getTraceAsString());
-            //return false;
+            return false;
         }
         q::commit();
         die;

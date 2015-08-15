@@ -1,5 +1,7 @@
 <?php
 
+namespace modules\blocks;
+
 use diversen\conf;
 use diversen\db;
 use diversen\db\q;
@@ -11,7 +13,9 @@ use diversen\session;
 use diversen\uri;
 
 
-class blocks {
+use modules\configdb\module as configdb;
+
+class module {
 
     public function indexAction() {
         if (!session::checkAccessControl('blocks_allow')) {
@@ -198,13 +202,13 @@ class blocks {
 
             $options = array();
             $options['js'] = array('reference' => 'blocks', 'parent_id' => $id);
-            blocks::loadAssets($options);
+            self::loadAssets($options);
 
             $vars = self::getOne($id);
             $legend = lang::translate('Edit block');
         } else {
             $options['js'] = array('reference' => 'blocks', 'parent_id' => null);
-            blocks::loadAssets($options);
+            self::loadAssets($options);
             $legend = lang::translate('Add block');
         }
 
@@ -303,7 +307,7 @@ class blocks {
 
             // traverse blocks and remove element if set 
             //$data = array();
-            $blocks = blocks::getManipBlocks();
+            $blocks = self::getManipBlocks();
             foreach ($blocks as $val) {
                 $data = conf::getMainIni($val);
 
