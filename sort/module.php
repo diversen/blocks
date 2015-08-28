@@ -4,7 +4,6 @@ namespace modules\blocks\sort;
 
 use diversen\conf;
 use diversen\db\q;
-use diversen\layout;
 use diversen\log;
 use diversen\moduleloader;
 use diversen\session;
@@ -20,11 +19,10 @@ class module {
         if (!session::checkAccessControl('blocks_allow')) {
             return;
         }
-        layout::$blocksContent;
+
         moduleloader::includeModule('blocks');
         $blocks_js = conf::getModulePath('blocks') . "/assets/sort.js";
-        template::setInlineCss(conf::getModulePath('blocks') . "/assets/sort.css");
-        ;
+        template::setInlineCss(conf::getModulePath('blocks') . "/assets/sort.css");;
 
         $search = array();
         $search[] = '{blocks_js_ids}';

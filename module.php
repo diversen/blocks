@@ -55,8 +55,8 @@ class module {
      */
     public static function getBlocksFull() {
         $blocks = self::getBlocks();
-        $valid_blocks = self::getManipBlocks();
 
+        $valid_blocks = self::getManipBlocks();
 
         $str = self::getListStart();
         $unused = array();
@@ -85,13 +85,14 @@ class module {
         //print_r($unused);
 
         $values = conf::getMainIni('blocks_unused');
-        if (!$values)
+        if (!$values) {
             $values = array();
-
+        }
         $values = array_merge($values, $unused);
         $values = array_unique($values);
-        if (!$values)
+        if (!$values){
             $values = array();
+        }
         $str.= self::getOlBlock($values, 'blocks_unused');
         $str.= self::getListEnd();
 
@@ -141,8 +142,9 @@ class module {
         $str.= "<ol id=\"$name\" class =\"connectedSortable\">\n";
         $num++;
 
-        if (empty($values))
+        if (empty($values)) {
             $values = array();
+        }
         foreach ($values as $val) {
 
             // check for custom blocks
@@ -151,7 +153,6 @@ class module {
                 $val_str = $val;
 
                 $row = self::getOne($val);
-                //print_r($row);
                 $name = $row['title'];
             } else {
                 $val_str = str_replace('/', '-', $val);
