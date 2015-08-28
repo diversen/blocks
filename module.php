@@ -36,6 +36,7 @@ class module {
      */
     public static function getBlocks() {
         $blocks = conf::getMainIni('blocks_all');
+        
         $blocks = explode(',', $blocks);
         return $blocks;
     }
@@ -82,7 +83,6 @@ class module {
             }
         }
 
-        //print_r($unused);
 
         $values = conf::getMainIni('blocks_unused');
         if (!$values) {
@@ -279,8 +279,9 @@ class module {
         $insert_id = db::$dbh->lastInsertId();
         $unused = conf::getMainIni('blocks_unused');
 
-        if (!is_array($unused))
+        if (!is_array($unused)){
             $unused = array();
+        }
         array_push($unused, $insert_id);
 
         configdb::set('blocks_unused', $unused, 'main');
@@ -358,7 +359,7 @@ class module {
      * get all rows in block manip table
      * @return array $rows rows in table 
      */
-    public static function getAll() {
+    public static function getAllFromDb() {
         $db = new db();
         $rows = $db->selectAll('blocks');
         return $rows = html::specialEncode($rows);
@@ -378,7 +379,7 @@ class module {
      * display all rows in blocks 
      */
     public static function displayAll() {
-        $all = self::getAll();
+        $all = self::getAllFromDb();
 
         foreach ($all as $val) {
 
