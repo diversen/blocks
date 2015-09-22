@@ -2,22 +2,6 @@
 
 $LANG = array();
 
-// Translation of file modules/blocks/install.inc
-
-$LANG['blocks'] = 'Blocks';
-$LANG['blocks_unused'] = 'Unused blocks';
-$LANG['blocks_sec'] = 'Blocks sec';
-$LANG['Blocks'] = 'Blocks';
-// Translation of file modules/blocks/custom/module.php
-
-$LANG['Block has been added'] = 'Block has been added';
-$LANG['Block has been deleted'] = 'Block has been deleted';
-$LANG['Block has been inserted'] = 'Block has been inserted';
-// Translation of file modules/blocks/menu.inc
-
-$LANG['Sort blocks'] = 'Sort blocks';
-$LANG['View blocks'] = 'View blocks';
-$LANG['Add block'] = 'Add block';
 // Translation of file modules/blocks/module.php
 
 $LANG['Blocks has been sorted'] = 'Blocks has been sorted';
@@ -32,3 +16,19 @@ $LANG['Submit'] = 'Submit';
 $LANG['Insert a title'] = 'Insert a title';
 $LANG['No block content'] = 'No block content';
 $LANG['Edit'] = 'Edit';
+// Translation of file modules/blocks/install.inc
+
+$LANG['blocks'] = 'Blocks';
+$LANG['blocks_unused'] = 'Unused blocks';
+$LANG['blocks_sec'] = 'Blocks sec';
+$LANG['Blocks'] = 'Blocks';
+// Translation of file modules/blocks/menu.inc
+
+$LANG['Sort blocks'] = 'Sort blocks';
+$LANG['View blocks'] = 'View blocks';
+$LANG['Add block'] = 'Add block';
+// Translation of file modules/blocks/custom/module.php
+
+$LANG['Block has been added'] = 'Block has been added';
+$LANG['Block has been deleted'] = 'Block has been deleted';
+$LANG['Block has been inserted'] = 'Block has been inserted';
