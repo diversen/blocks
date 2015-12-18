@@ -8,6 +8,7 @@ use diversen\log;
 use diversen\moduleloader;
 use diversen\session;
 use diversen\template;
+use diversen\template\assets;
 
 use modules\blocks\module as blocks;
 use modules\configdb\module as configdb;
@@ -22,7 +23,8 @@ class module {
 
         moduleloader::includeModule('blocks');
         $blocks_js = conf::getModulePath('blocks') . "/assets/sort.js";
-        template::setInlineCss(conf::getModulePath('blocks') . "/assets/sort.css");
+        
+        assets::setInlineCss(conf::getModulePath('blocks') . "/assets/sort.css");
 
         $search = array();
         $search[] = '{blocks_js_ids}';
