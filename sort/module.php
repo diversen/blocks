@@ -7,7 +7,6 @@ use diversen\db\q;
 use diversen\log;
 use diversen\moduleloader;
 use diversen\session;
-use diversen\template;
 use diversen\template\assets;
 
 use modules\blocks\module as blocks;
@@ -34,8 +33,7 @@ class module {
         $replace[] = blocks::getJsIds();
         $replace[] = blocks::getJsData();
 
-        //$replace = $code;
-        template::setInlineJs(
+        assets::setInlineJs(
                 $blocks_js,
                 // load last or close to. 
                 10000, array('no_cache' => 1,
