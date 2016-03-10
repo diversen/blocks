@@ -2,13 +2,13 @@
 
 $LANG = array();
 
+$LANG['Block has been added'] = 'Blok er blevet tilføjet';
+$LANG['Block has been deleted'] = 'Blok er slettet';
+$LANG['Block has been inserted'] = 'Blok er blevet indsat';
 $LANG['blocks'] = 'Blokke';
 $LANG['blocks_unused'] = 'Ubrugte blokke';
 $LANG['blocks_sec'] = 'Sekundære blokke ';
 $LANG['Blocks'] = 'Blokke';
-$LANG['Block has been added'] = 'Blok er blevet tilføjet';
-$LANG['Block has been deleted'] = 'Blok er slettet';
-$LANG['Block has been inserted'] = 'Blok er blevet indsat';
 $LANG['Sort blocks'] = 'Sorter blokke';
 $LANG['View blocks'] = 'Se blokke';
 $LANG['Add block'] = 'Tilføj blok';
