@@ -25,8 +25,8 @@ class module {
 
     public static function loadAssets($options) {
         if (conf::getModuleIni('blocks_markedit')) {
-            moduleloader::includeTemplateCommon('jquery-markedit');
-            jquery_markedit_load_assets($options);
+            //moduleloader::includeTemplateCommon('jquery-markedit');
+            //jquery_markedit_load_assets($options);
         }
     }
 
