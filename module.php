@@ -18,7 +18,7 @@ use modules\configdb\module as configdb;
 class module {
 
     public function indexAction() {
-        if (!session::checkAccessControl('blocks_allow')) {
+        if (!session::checkAccessFromModuleIni('blocks_allow')) {
             return;
         }
     }

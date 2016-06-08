@@ -14,7 +14,7 @@ use modules\blocks\module as blocks;
 class module {
 
     public function addAction() {
-        if (!session::checkAccessControl('blocks_allow')) {
+        if (!session::checkAccessFromModuleIni('blocks_allow')) {
             return;
         }
 
@@ -40,7 +40,7 @@ class module {
     }
 
     public function deleteAction() {
-        if (!session::checkAccessControl('blocks_allow')) {
+        if (!session::checkAccessFromModuleIni('blocks_allow')) {
             return;
         }
 
@@ -66,7 +66,7 @@ class module {
 
     public function editAction() {
 
-        if (!session::checkAccessControl('blocks_allow')) {
+        if (!session::checkAccessFromModuleIni('blocks_allow')) {
             return;
         }
 
@@ -91,7 +91,7 @@ class module {
 
     public function indexAction() {
 
-        if (!session::checkAccessControl('blocks_allow')) {
+        if (!session::checkAccessFromModuleIni('blocks_allow')) {
             return;
         }
 
