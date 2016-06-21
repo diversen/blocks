@@ -23,12 +23,6 @@ class module {
         }
     }
 
-    public static function loadAssets($options) {
-        if (conf::getModuleIni('blocks_markedit')) {
-            //moduleloader::includeTemplateCommon('jquery-markedit');
-            //jquery_markedit_load_assets($options);
-        }
-    }
 
     /**
      *
@@ -201,15 +195,12 @@ class module {
         if ($action == 'update') {
             $id = self::getId();
 
-            $options = array();
-            $options['js'] = array('reference' => 'blocks', 'parent_id' => $id);
-            self::loadAssets($options);
+
 
             $vars = self::getOne($id);
             $legend = lang::translate('Edit block');
         } else {
-            $options['js'] = array('reference' => 'blocks', 'parent_id' => null);
-            self::loadAssets($options);
+
             $legend = lang::translate('Add block');
         }
 
